@@ -8,17 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		BE6DAFEF29E4A23D0088A3A9 /* MapViewApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6DAFEE29E4A23D0088A3A9 /* MapViewApp.swift */; };
-		BE6DAFF129E4A23D0088A3A9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6DAFF029E4A23D0088A3A9 /* ContentView.swift */; };
+		BE6DAFF129E4A23D0088A3A9 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6DAFF029E4A23D0088A3A9 /* MapView.swift */; };
 		BE6DAFF329E4A23E0088A3A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE6DAFF229E4A23E0088A3A9 /* Assets.xcassets */; };
 		BE6DAFF629E4A23E0088A3A9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE6DAFF529E4A23E0088A3A9 /* Preview Assets.xcassets */; };
+		BE6DAFFD29E4A3300088A3A9 /* MapViewVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6DAFFC29E4A3300088A3A9 /* MapViewVM.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		BE6DAFEB29E4A23D0088A3A9 /* MapView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MapView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE6DAFEE29E4A23D0088A3A9 /* MapViewApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewApp.swift; sourceTree = "<group>"; };
-		BE6DAFF029E4A23D0088A3A9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		BE6DAFF029E4A23D0088A3A9 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		BE6DAFF229E4A23E0088A3A9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BE6DAFF529E4A23E0088A3A9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		BE6DAFFC29E4A3300088A3A9 /* MapViewVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewVM.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,7 +54,8 @@
 			isa = PBXGroup;
 			children = (
 				BE6DAFEE29E4A23D0088A3A9 /* MapViewApp.swift */,
-				BE6DAFF029E4A23D0088A3A9 /* ContentView.swift */,
+				BE6DAFF029E4A23D0088A3A9 /* MapView.swift */,
+				BE6DAFFC29E4A3300088A3A9 /* MapViewVM.swift */,
 				BE6DAFF229E4A23E0088A3A9 /* Assets.xcassets */,
 				BE6DAFF429E4A23E0088A3A9 /* Preview Content */,
 			);
@@ -137,8 +140,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BE6DAFF129E4A23D0088A3A9 /* ContentView.swift in Sources */,
+				BE6DAFF129E4A23D0088A3A9 /* MapView.swift in Sources */,
 				BE6DAFEF29E4A23D0088A3A9 /* MapViewApp.swift in Sources */,
+				BE6DAFFD29E4A3300088A3A9 /* MapViewVM.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,6 +274,7 @@
 				DEVELOPMENT_TEAM = UAF5HBHXWW;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app requires user location";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -299,6 +304,7 @@
 				DEVELOPMENT_TEAM = UAF5HBHXWW;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app requires user location";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
