@@ -17,10 +17,12 @@ enum MapDetails {
 // need to conform to NSObject and CLLocation Delegate
 final class MapViewVM: NSObject, ObservableObject, CLLocationManagerDelegate {
     @Published var region: MKCoordinateRegion = MKCoordinateRegion(center: MapDetails.defaultLocation, span: MapDetails.defaultSpan)
+    //used to annotate the location from search
+    @Published private(set) var annotationItems: [AnnotationItem] = []
     
     var locationManager: CLLocationManager? //optional 
-
-
+    
+    
     //func to check if user has location services enabled - changed to async to prevent background threads updating the main ui
     func checkLocationServices() async {
         if CLLocationManager.locationServicesEnabled() {
@@ -55,6 +57,29 @@ final class MapViewVM: NSObject, ObservableObject, CLLocationManagerDelegate {
             }
         @unknown default:
             break
+        }
+    }
+
+    //using mklocalsearch
+
+    func getPlace(from address: AddressResult) {
+        let searchRequest = MKLocalSearch.Request()
+        let title = address.title
+        let subTitle = address.subtitle
+        searchRequest.naturalLanguageQuery = subTitle.contains(title) ? subTitle : title + ", " + subTitle
+        let search = MKLocalSearch(request: searchRequest)
+        search.start { (response, error) in
+            guard let response = response else {
+                print(error?.localizedDescription ?? "error")
+                return
+            }
+            let mapItem = response.mapItems[0]
+            let placemark = mapItem.placemark
+            let coordinate = placemark.coordinate
+            let annotation = AnnotationItem(latitude: placemark.coordinate.latitude, longitude: placemark.coordinate.longitude)
+            DispatchQueue.main.async {
+                self.annotationItems.append(annotation)
+            }
         }
     }
 }
