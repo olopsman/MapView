@@ -12,11 +12,11 @@ final class SearchVM: NSObject, ObservableObject, MKLocalSearchCompleterDelegate
     @Published private(set) var results: Array<AddressResult> = []
     @Published var searchableText = "" 
 
-    private var localSearchCompleter: MKLocalSearchCompleter {
+    private lazy var localSearchCompleter: MKLocalSearchCompleter = {
         let completer = MKLocalSearchCompleter()
         completer.delegate = self
         return completer
-    }
+    }()
     
     func searchAddress(_ searchableText: String) {
         print(searchableText)

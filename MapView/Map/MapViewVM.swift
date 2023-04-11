@@ -79,6 +79,7 @@ final class MapViewVM: NSObject, ObservableObject, CLLocationManagerDelegate {
             let annotation = AnnotationItem(latitude: placemark.coordinate.latitude, longitude: placemark.coordinate.longitude)
             DispatchQueue.main.async {
                 self.annotationItems.append(annotation)
+                self.region = response.boundingRegion
             }
         }
     }
